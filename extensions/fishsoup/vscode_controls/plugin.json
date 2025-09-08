@@ -23,11 +23,11 @@
       "icon": "icon.png",
       "type": "command",
       "action": {
-      "exec": "zsh",
-      "args": [
+        "exec": "zsh",
+        "args": [
           "-c",
           "code --new-window"
-      ]
+        ]
       }
     },
     {
