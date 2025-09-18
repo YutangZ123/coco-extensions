@@ -1,0 +1,163 @@
+{
+  "id": "wechat_controls",
+  "name": "WeChat Controls",
+  "developer": "__local__",
+  "platforms": [
+    "macos"
+  ],
+  "description": "Quickly control WeChat via AppleScript and CLI commands. Supports searching, screenshot, opening contacts, favorites, moments, chat files.",
+  "icon": "icon.png",
+  "type": "extension",
+  "tags": [
+    "WeChat"
+  ],
+  "screenshots": [
+    {
+      "title": "WeChat Controls",
+      "url": "screenshot.png"
+    }
+  ],
+  "commands": [
+    {
+      "name": "Search",
+      "icon": "icon.png",
+      "type": "command",
+      "action": {
+        "exec": "bash",
+        "args": [
+          "-c",
+          "osascript -e 'do shell script \"open -a WeChat\"' -e 'tell application \"System Events\" to keystroke \"f\" using {command down}'"
+        ]
+      }
+    },
+    {
+    "name": "Open Contacts",
+      "description": "Activates WeChat and switches to the Contacts tab.",
+      "icon": "icon.png",
+      "type": "command",
+      "action": {
+        "exec": "osascript",
+        "args": [
+          "-e",
+          "do shell script \"open -a WeChat\"",
+          "-e",
+          "delay 0.5",
+          "-e",
+          "tell application \"System Events\"",
+          "-e",
+          "tell process \"WeChat\"",
+          "-e",
+          "tell window 1",
+          "-e",
+          "click radio button 2",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell"
+        ]
+      }
+    },
+    {
+    "name": "Open Favorites",
+      "description": "Activates WeChat and switches to the Favorites tab.",
+      "icon": "icon.png",
+      "type": "command",
+      "action": {
+        "exec": "osascript",
+        "args": [
+          "-e",
+          "do shell script \"open -a WeChat\"",
+          "-e",
+          "delay 0.5",
+          "-e",
+          "tell application \"System Events\"",
+          "-e",
+          "tell process \"WeChat\"",
+          "-e",
+          "tell window 1",
+          "-e",
+          "click radio button 3",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell"
+        ]
+      }
+    },
+    {
+      "name": "Open moments",
+      "description": "Activates WeChat and open moments window.",
+      "icon": "icon.png",
+      "type": "command",
+      "action": {
+        "exec": "osascript",
+        "args": [
+          "-e",
+          "do shell script \"open -a WeChat\"",
+          "-e",
+          "delay 0.5",
+          "-e",
+          "tell application \"System Events\"",
+          "-e",
+          "tell process \"WeChat\"",
+          "-e",
+          "tell window 1",
+          "-e",
+          "click button 5",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell"
+        ]
+      }
+    },
+    {
+      "name": "Open chat files",
+      "description": "Activates WeChat and open chat file window.",
+      "icon": "icon.png",
+      "type": "command",
+      "action": {
+        "exec": "osascript",
+        "args": [
+          "-e",
+          "do shell script \"open -a WeChat\"",
+          "-e",
+          "delay 0.5",
+          "-e",
+          "tell application \"System Events\"",
+          "-e",
+          "tell process \"WeChat\"",
+          "-e",
+          "tell window 1",
+          "-e",
+          "click button 5",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell",
+          "-e",
+          "end tell"
+        ]
+      }
+    },
+    {
+      "name": "Screenshot",
+      "description": "Screenshot with WeChat",
+      "icon": "icon.png",
+      "type": "command",
+      "action": {
+        "exec": "osascript",
+        "args": [
+          "-e",
+          "tell application \"System Events\" to keystroke \"a\" using {control down, command down}"
+        ]
+      }
+    }
+  ]
+}
